@@ -31,7 +31,7 @@ class stats(object):
         params = {}
         if keyprefix is not None:
             params['keyPrefix'] = keyprefix
-        return next(self.zap._request(self.zap.base + 'stats/view/stats/', params).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'stats/view/stats/', params).values()))
 
     def all_sites_stats(self, keyprefix=None):
         """
@@ -40,7 +40,7 @@ class stats(object):
         params = {}
         if keyprefix is not None:
             params['keyPrefix'] = keyprefix
-        return next(self.zap._request(self.zap.base + 'stats/view/allSitesStats/', params).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'stats/view/allSitesStats/', params).values()))
 
     def site_stats(self, site, keyprefix=None):
         """
@@ -49,42 +49,42 @@ class stats(object):
         params = {'site' : site}
         if keyprefix is not None:
             params['keyPrefix'] = keyprefix
-        return next(self.zap._request(self.zap.base + 'stats/view/siteStats/', params).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'stats/view/siteStats/', params).values()))
 
     @property
     def option_statsd_host(self):
         """
         Gets the Statsd service hostname
         """
-        return next(self.zap._request(self.zap.base + 'stats/view/optionStatsdHost/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'stats/view/optionStatsdHost/').values()))
 
     @property
     def option_statsd_port(self):
         """
         Gets the Statsd service port
         """
-        return next(self.zap._request(self.zap.base + 'stats/view/optionStatsdPort/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'stats/view/optionStatsdPort/').values()))
 
     @property
     def option_statsd_prefix(self):
         """
         Gets the prefix to be applied to all stats sent to the configured Statsd service
         """
-        return next(self.zap._request(self.zap.base + 'stats/view/optionStatsdPrefix/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'stats/view/optionStatsdPrefix/').values()))
 
     @property
     def option_in_memory_enabled(self):
         """
         Returns 'true' if in memory statistics are enabled, otherwise returns 'false'
         """
-        return next(self.zap._request(self.zap.base + 'stats/view/optionInMemoryEnabled/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'stats/view/optionInMemoryEnabled/').values()))
 
     @property
     def option_statsd_enabled(self):
         """
         Returns 'true' if a Statsd server has been correctly configured, otherwise returns 'false'
         """
-        return next(self.zap._request(self.zap.base + 'stats/view/optionStatsdEnabled/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'stats/view/optionStatsdEnabled/').values()))
 
     def clear_stats(self, keyprefix=None, apikey=''):
         """
@@ -93,30 +93,30 @@ class stats(object):
         params = {'apikey' : apikey}
         if keyprefix is not None:
             params['keyPrefix'] = keyprefix
-        return next(self.zap._request(self.zap.base + 'stats/action/clearStats/', params).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'stats/action/clearStats/', params).values()))
 
     def set_option_statsd_host(self, string, apikey=''):
         """
         Sets the Statsd service hostname, supply an empty string to stop using a Statsd service
         """
-        return next(self.zap._request(self.zap.base + 'stats/action/setOptionStatsdHost/', {'String' : string, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'stats/action/setOptionStatsdHost/', {'String' : string, 'apikey' : apikey}).values()))
 
     def set_option_statsd_prefix(self, string, apikey=''):
         """
         Sets the prefix to be applied to all stats sent to the configured Statsd service
         """
-        return next(self.zap._request(self.zap.base + 'stats/action/setOptionStatsdPrefix/', {'String' : string, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'stats/action/setOptionStatsdPrefix/', {'String' : string, 'apikey' : apikey}).values()))
 
     def set_option_in_memory_enabled(self, boolean, apikey=''):
         """
         Sets whether in memory statistics are enabled
         """
-        return next(self.zap._request(self.zap.base + 'stats/action/setOptionInMemoryEnabled/', {'Boolean' : boolean, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'stats/action/setOptionInMemoryEnabled/', {'Boolean' : boolean, 'apikey' : apikey}).values()))
 
     def set_option_statsd_port(self, integer, apikey=''):
         """
         Sets the Statsd service port
         """
-        return next(self.zap._request(self.zap.base + 'stats/action/setOptionStatsdPort/', {'Integer' : integer, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'stats/action/setOptionStatsdPort/', {'Integer' : integer, 'apikey' : apikey}).values()))
 
 

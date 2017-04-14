@@ -28,34 +28,34 @@ class ascan(object):
         params = {}
         if scanid is not None:
             params['scanId'] = scanid
-        return next(self.zap._request(self.zap.base + 'ascan/view/status/', params).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/view/status/', params).values()))
 
     def scan_progress(self, scanid=None):
         params = {}
         if scanid is not None:
             params['scanId'] = scanid
-        return next(self.zap._request(self.zap.base + 'ascan/view/scanProgress/', params).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/view/scanProgress/', params).values()))
 
     def messages_ids(self, scanid):
-        return next(self.zap._request(self.zap.base + 'ascan/view/messagesIds/', {'scanId' : scanid}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/view/messagesIds/', {'scanId' : scanid}).values()))
 
     def alerts_ids(self, scanid):
-        return next(self.zap._request(self.zap.base + 'ascan/view/alertsIds/', {'scanId' : scanid}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/view/alertsIds/', {'scanId' : scanid}).values()))
 
     @property
     def scans(self):
-        return next(self.zap._request(self.zap.base + 'ascan/view/scans/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/view/scans/').values()))
 
     @property
     def scan_policy_names(self):
-        return next(self.zap._request(self.zap.base + 'ascan/view/scanPolicyNames/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/view/scanPolicyNames/').values()))
 
     @property
     def excluded_from_scan(self):
         """
         Gets the regexes of URLs excluded from the active scans.
         """
-        return next(self.zap._request(self.zap.base + 'ascan/view/excludedFromScan/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/view/excludedFromScan/').values()))
 
     def scanners(self, scanpolicyname=None, policyid=None):
         params = {}
@@ -63,7 +63,7 @@ class ascan(object):
             params['scanPolicyName'] = scanpolicyname
         if policyid is not None:
             params['policyId'] = policyid
-        return next(self.zap._request(self.zap.base + 'ascan/view/scanners/', params).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/view/scanners/', params).values()))
 
     def policies(self, scanpolicyname=None, policyid=None):
         params = {}
@@ -71,118 +71,118 @@ class ascan(object):
             params['scanPolicyName'] = scanpolicyname
         if policyid is not None:
             params['policyId'] = policyid
-        return next(self.zap._request(self.zap.base + 'ascan/view/policies/', params).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/view/policies/', params).values()))
 
     @property
     def attack_mode_queue(self):
-        return next(self.zap._request(self.zap.base + 'ascan/view/attackModeQueue/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/view/attackModeQueue/').values()))
 
     @property
     def excluded_params(self):
         """
         Gets all the parameters that are excluded. For each parameter the following are shown: the name, the URL, and the parameter type.
         """
-        return next(self.zap._request(self.zap.base + 'ascan/view/excludedParams/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/view/excludedParams/').values()))
 
     @property
     def option_excluded_param_list(self):
         """
         Use view excludedParams instead.
         """
-        return next(self.zap._request(self.zap.base + 'ascan/view/optionExcludedParamList/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/view/optionExcludedParamList/').values()))
 
     @property
     def excluded_param_types(self):
         """
         Gets all the types of excluded parameters. For each type the following are shown: the ID and the name.
         """
-        return next(self.zap._request(self.zap.base + 'ascan/view/excludedParamTypes/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/view/excludedParamTypes/').values()))
 
     @property
     def option_attack_policy(self):
-        return next(self.zap._request(self.zap.base + 'ascan/view/optionAttackPolicy/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/view/optionAttackPolicy/').values()))
 
     @property
     def option_default_policy(self):
-        return next(self.zap._request(self.zap.base + 'ascan/view/optionDefaultPolicy/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/view/optionDefaultPolicy/').values()))
 
     @property
     def option_delay_in_ms(self):
-        return next(self.zap._request(self.zap.base + 'ascan/view/optionDelayInMs/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/view/optionDelayInMs/').values()))
 
     @property
     def option_handle_anti_csrf_tokens(self):
-        return next(self.zap._request(self.zap.base + 'ascan/view/optionHandleAntiCSRFTokens/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/view/optionHandleAntiCSRFTokens/').values()))
 
     @property
     def option_host_per_scan(self):
-        return next(self.zap._request(self.zap.base + 'ascan/view/optionHostPerScan/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/view/optionHostPerScan/').values()))
 
     @property
     def option_max_chart_time_in_mins(self):
-        return next(self.zap._request(self.zap.base + 'ascan/view/optionMaxChartTimeInMins/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/view/optionMaxChartTimeInMins/').values()))
 
     @property
     def option_max_results_to_list(self):
-        return next(self.zap._request(self.zap.base + 'ascan/view/optionMaxResultsToList/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/view/optionMaxResultsToList/').values()))
 
     @property
     def option_max_rule_duration_in_mins(self):
-        return next(self.zap._request(self.zap.base + 'ascan/view/optionMaxRuleDurationInMins/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/view/optionMaxRuleDurationInMins/').values()))
 
     @property
     def option_max_scan_duration_in_mins(self):
-        return next(self.zap._request(self.zap.base + 'ascan/view/optionMaxScanDurationInMins/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/view/optionMaxScanDurationInMins/').values()))
 
     @property
     def option_max_scans_in_ui(self):
-        return next(self.zap._request(self.zap.base + 'ascan/view/optionMaxScansInUI/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/view/optionMaxScansInUI/').values()))
 
     @property
     def option_target_params_enabled_rpc(self):
-        return next(self.zap._request(self.zap.base + 'ascan/view/optionTargetParamsEnabledRPC/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/view/optionTargetParamsEnabledRPC/').values()))
 
     @property
     def option_target_params_injectable(self):
-        return next(self.zap._request(self.zap.base + 'ascan/view/optionTargetParamsInjectable/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/view/optionTargetParamsInjectable/').values()))
 
     @property
     def option_thread_per_host(self):
-        return next(self.zap._request(self.zap.base + 'ascan/view/optionThreadPerHost/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/view/optionThreadPerHost/').values()))
 
     @property
     def option_allow_attack_on_start(self):
-        return next(self.zap._request(self.zap.base + 'ascan/view/optionAllowAttackOnStart/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/view/optionAllowAttackOnStart/').values()))
 
     @property
     def option_inject_plugin_id_in_header(self):
         """
         Tells whether or not the active scanner should inject the HTTP request header X-ZAP-Scan-ID, with the ID of the scanner that's sending the requests.
         """
-        return next(self.zap._request(self.zap.base + 'ascan/view/optionInjectPluginIdInHeader/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/view/optionInjectPluginIdInHeader/').values()))
 
     @property
     def option_prompt_in_attack_mode(self):
-        return next(self.zap._request(self.zap.base + 'ascan/view/optionPromptInAttackMode/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/view/optionPromptInAttackMode/').values()))
 
     @property
     def option_prompt_to_clear_finished_scans(self):
-        return next(self.zap._request(self.zap.base + 'ascan/view/optionPromptToClearFinishedScans/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/view/optionPromptToClearFinishedScans/').values()))
 
     @property
     def option_rescan_in_attack_mode(self):
-        return next(self.zap._request(self.zap.base + 'ascan/view/optionRescanInAttackMode/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/view/optionRescanInAttackMode/').values()))
 
     @property
     def option_scan_headers_all_requests(self):
         """
         Tells whether or not the HTTP Headers of all requests should be scanned. Not just requests that send parameters, through the query or request body.
         """
-        return next(self.zap._request(self.zap.base + 'ascan/view/optionScanHeadersAllRequests/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/view/optionScanHeadersAllRequests/').values()))
 
     @property
     def option_show_advanced_dialog(self):
-        return next(self.zap._request(self.zap.base + 'ascan/view/optionShowAdvancedDialog/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/view/optionShowAdvancedDialog/').values()))
 
     def scan(self, url=None, recurse=None, inscopeonly=None, scanpolicyname=None, method=None, postdata=None, contextid=None, apikey=''):
         """
@@ -203,7 +203,7 @@ class ascan(object):
             params['postData'] = postdata
         if contextid is not None:
             params['contextId'] = contextid
-        return next(self.zap._request(self.zap.base + 'ascan/action/scan/', params).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/scan/', params).values()))
 
     def scan_as_user(self, url=None, contextid=None, userid=None, recurse=None, scanpolicyname=None, method=None, postdata=None, apikey=''):
         """
@@ -224,97 +224,97 @@ class ascan(object):
             params['method'] = method
         if postdata is not None:
             params['postData'] = postdata
-        return next(self.zap._request(self.zap.base + 'ascan/action/scanAsUser/', params).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/scanAsUser/', params).values()))
 
     def pause(self, scanid, apikey=''):
-        return next(self.zap._request(self.zap.base + 'ascan/action/pause/', {'scanId' : scanid, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/pause/', {'scanId' : scanid, 'apikey' : apikey}).values()))
 
     def resume(self, scanid, apikey=''):
-        return next(self.zap._request(self.zap.base + 'ascan/action/resume/', {'scanId' : scanid, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/resume/', {'scanId' : scanid, 'apikey' : apikey}).values()))
 
     def stop(self, scanid, apikey=''):
-        return next(self.zap._request(self.zap.base + 'ascan/action/stop/', {'scanId' : scanid, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/stop/', {'scanId' : scanid, 'apikey' : apikey}).values()))
 
     def remove_scan(self, scanid, apikey=''):
-        return next(self.zap._request(self.zap.base + 'ascan/action/removeScan/', {'scanId' : scanid, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/removeScan/', {'scanId' : scanid, 'apikey' : apikey}).values()))
 
     def pause_all_scans(self, apikey=''):
-        return next(self.zap._request(self.zap.base + 'ascan/action/pauseAllScans/', {'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/pauseAllScans/', {'apikey' : apikey}).values()))
 
     def resume_all_scans(self, apikey=''):
-        return next(self.zap._request(self.zap.base + 'ascan/action/resumeAllScans/', {'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/resumeAllScans/', {'apikey' : apikey}).values()))
 
     def stop_all_scans(self, apikey=''):
-        return next(self.zap._request(self.zap.base + 'ascan/action/stopAllScans/', {'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/stopAllScans/', {'apikey' : apikey}).values()))
 
     def remove_all_scans(self, apikey=''):
-        return next(self.zap._request(self.zap.base + 'ascan/action/removeAllScans/', {'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/removeAllScans/', {'apikey' : apikey}).values()))
 
     def clear_excluded_from_scan(self, apikey=''):
         """
         Clears the regexes of URLs excluded from the active scans.
         """
-        return next(self.zap._request(self.zap.base + 'ascan/action/clearExcludedFromScan/', {'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/clearExcludedFromScan/', {'apikey' : apikey}).values()))
 
     def exclude_from_scan(self, regex, apikey=''):
         """
         Adds a regex of URLs that should be excluded from the active scans.
         """
-        return next(self.zap._request(self.zap.base + 'ascan/action/excludeFromScan/', {'regex' : regex, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/excludeFromScan/', {'regex' : regex, 'apikey' : apikey}).values()))
 
     def enable_all_scanners(self, scanpolicyname=None, apikey=''):
         params = {'apikey' : apikey}
         if scanpolicyname is not None:
             params['scanPolicyName'] = scanpolicyname
-        return next(self.zap._request(self.zap.base + 'ascan/action/enableAllScanners/', params).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/enableAllScanners/', params).values()))
 
     def disable_all_scanners(self, scanpolicyname=None, apikey=''):
         params = {'apikey' : apikey}
         if scanpolicyname is not None:
             params['scanPolicyName'] = scanpolicyname
-        return next(self.zap._request(self.zap.base + 'ascan/action/disableAllScanners/', params).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/disableAllScanners/', params).values()))
 
     def enable_scanners(self, ids, scanpolicyname=None, apikey=''):
         params = {'ids' : ids, 'apikey' : apikey}
         if scanpolicyname is not None:
             params['scanPolicyName'] = scanpolicyname
-        return next(self.zap._request(self.zap.base + 'ascan/action/enableScanners/', params).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/enableScanners/', params).values()))
 
     def disable_scanners(self, ids, scanpolicyname=None, apikey=''):
         params = {'ids' : ids, 'apikey' : apikey}
         if scanpolicyname is not None:
             params['scanPolicyName'] = scanpolicyname
-        return next(self.zap._request(self.zap.base + 'ascan/action/disableScanners/', params).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/disableScanners/', params).values()))
 
     def set_enabled_policies(self, ids, scanpolicyname=None, apikey=''):
         params = {'ids' : ids, 'apikey' : apikey}
         if scanpolicyname is not None:
             params['scanPolicyName'] = scanpolicyname
-        return next(self.zap._request(self.zap.base + 'ascan/action/setEnabledPolicies/', params).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/setEnabledPolicies/', params).values()))
 
     def set_policy_attack_strength(self, id, attackstrength, scanpolicyname=None, apikey=''):
         params = {'id' : id, 'attackStrength' : attackstrength, 'apikey' : apikey}
         if scanpolicyname is not None:
             params['scanPolicyName'] = scanpolicyname
-        return next(self.zap._request(self.zap.base + 'ascan/action/setPolicyAttackStrength/', params).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/setPolicyAttackStrength/', params).values()))
 
     def set_policy_alert_threshold(self, id, alertthreshold, scanpolicyname=None, apikey=''):
         params = {'id' : id, 'alertThreshold' : alertthreshold, 'apikey' : apikey}
         if scanpolicyname is not None:
             params['scanPolicyName'] = scanpolicyname
-        return next(self.zap._request(self.zap.base + 'ascan/action/setPolicyAlertThreshold/', params).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/setPolicyAlertThreshold/', params).values()))
 
     def set_scanner_attack_strength(self, id, attackstrength, scanpolicyname=None, apikey=''):
         params = {'id' : id, 'attackStrength' : attackstrength, 'apikey' : apikey}
         if scanpolicyname is not None:
             params['scanPolicyName'] = scanpolicyname
-        return next(self.zap._request(self.zap.base + 'ascan/action/setScannerAttackStrength/', params).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/setScannerAttackStrength/', params).values()))
 
     def set_scanner_alert_threshold(self, id, alertthreshold, scanpolicyname=None, apikey=''):
         params = {'id' : id, 'alertThreshold' : alertthreshold, 'apikey' : apikey}
         if scanpolicyname is not None:
             params['scanPolicyName'] = scanpolicyname
-        return next(self.zap._request(self.zap.base + 'ascan/action/setScannerAlertThreshold/', params).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/setScannerAlertThreshold/', params).values()))
 
     def add_scan_policy(self, scanpolicyname, alertthreshold=None, attackstrength=None, apikey=''):
         params = {'scanPolicyName' : scanpolicyname, 'apikey' : apikey}
@@ -322,10 +322,10 @@ class ascan(object):
             params['alertThreshold'] = alertthreshold
         if attackstrength is not None:
             params['attackStrength'] = attackstrength
-        return next(self.zap._request(self.zap.base + 'ascan/action/addScanPolicy/', params).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/addScanPolicy/', params).values()))
 
     def remove_scan_policy(self, scanpolicyname, apikey=''):
-        return next(self.zap._request(self.zap.base + 'ascan/action/removeScanPolicy/', {'scanPolicyName' : scanpolicyname, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/removeScanPolicy/', {'scanPolicyName' : scanpolicyname, 'apikey' : apikey}).values()))
 
     def update_scan_policy(self, scanpolicyname, alertthreshold=None, attackstrength=None, apikey=''):
         params = {'scanPolicyName' : scanpolicyname, 'apikey' : apikey}
@@ -333,7 +333,7 @@ class ascan(object):
             params['alertThreshold'] = alertthreshold
         if attackstrength is not None:
             params['attackStrength'] = attackstrength
-        return next(self.zap._request(self.zap.base + 'ascan/action/updateScanPolicy/', params).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/updateScanPolicy/', params).values()))
 
     def add_excluded_param(self, name, type=None, url=None, apikey=''):
         """
@@ -344,7 +344,7 @@ class ascan(object):
             params['type'] = type
         if url is not None:
             params['url'] = url
-        return next(self.zap._request(self.zap.base + 'ascan/action/addExcludedParam/', params).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/addExcludedParam/', params).values()))
 
     def modify_excluded_param(self, idx, name=None, type=None, url=None, apikey=''):
         """
@@ -357,78 +357,78 @@ class ascan(object):
             params['type'] = type
         if url is not None:
             params['url'] = url
-        return next(self.zap._request(self.zap.base + 'ascan/action/modifyExcludedParam/', params).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/modifyExcludedParam/', params).values()))
 
     def remove_excluded_param(self, idx, apikey=''):
         """
         Removes a parameter excluded from the scan, with the given index. The index can be obtained with the view excludedParams.
         """
-        return next(self.zap._request(self.zap.base + 'ascan/action/removeExcludedParam/', {'idx' : idx, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/removeExcludedParam/', {'idx' : idx, 'apikey' : apikey}).values()))
 
     def set_option_attack_policy(self, string, apikey=''):
-        return next(self.zap._request(self.zap.base + 'ascan/action/setOptionAttackPolicy/', {'String' : string, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/setOptionAttackPolicy/', {'String' : string, 'apikey' : apikey}).values()))
 
     def set_option_default_policy(self, string, apikey=''):
-        return next(self.zap._request(self.zap.base + 'ascan/action/setOptionDefaultPolicy/', {'String' : string, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/setOptionDefaultPolicy/', {'String' : string, 'apikey' : apikey}).values()))
 
     def set_option_allow_attack_on_start(self, boolean, apikey=''):
-        return next(self.zap._request(self.zap.base + 'ascan/action/setOptionAllowAttackOnStart/', {'Boolean' : boolean, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/setOptionAllowAttackOnStart/', {'Boolean' : boolean, 'apikey' : apikey}).values()))
 
     def set_option_delay_in_ms(self, integer, apikey=''):
-        return next(self.zap._request(self.zap.base + 'ascan/action/setOptionDelayInMs/', {'Integer' : integer, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/setOptionDelayInMs/', {'Integer' : integer, 'apikey' : apikey}).values()))
 
     def set_option_handle_anti_csrf_tokens(self, boolean, apikey=''):
-        return next(self.zap._request(self.zap.base + 'ascan/action/setOptionHandleAntiCSRFTokens/', {'Boolean' : boolean, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/setOptionHandleAntiCSRFTokens/', {'Boolean' : boolean, 'apikey' : apikey}).values()))
 
     def set_option_host_per_scan(self, integer, apikey=''):
-        return next(self.zap._request(self.zap.base + 'ascan/action/setOptionHostPerScan/', {'Integer' : integer, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/setOptionHostPerScan/', {'Integer' : integer, 'apikey' : apikey}).values()))
 
     def set_option_inject_plugin_id_in_header(self, boolean, apikey=''):
         """
         Sets whether or not the active scanner should inject the HTTP request header X-ZAP-Scan-ID, with the ID of the scanner that's sending the requests.
         """
-        return next(self.zap._request(self.zap.base + 'ascan/action/setOptionInjectPluginIdInHeader/', {'Boolean' : boolean, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/setOptionInjectPluginIdInHeader/', {'Boolean' : boolean, 'apikey' : apikey}).values()))
 
     def set_option_max_chart_time_in_mins(self, integer, apikey=''):
-        return next(self.zap._request(self.zap.base + 'ascan/action/setOptionMaxChartTimeInMins/', {'Integer' : integer, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/setOptionMaxChartTimeInMins/', {'Integer' : integer, 'apikey' : apikey}).values()))
 
     def set_option_max_results_to_list(self, integer, apikey=''):
-        return next(self.zap._request(self.zap.base + 'ascan/action/setOptionMaxResultsToList/', {'Integer' : integer, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/setOptionMaxResultsToList/', {'Integer' : integer, 'apikey' : apikey}).values()))
 
     def set_option_max_rule_duration_in_mins(self, integer, apikey=''):
-        return next(self.zap._request(self.zap.base + 'ascan/action/setOptionMaxRuleDurationInMins/', {'Integer' : integer, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/setOptionMaxRuleDurationInMins/', {'Integer' : integer, 'apikey' : apikey}).values()))
 
     def set_option_max_scan_duration_in_mins(self, integer, apikey=''):
-        return next(self.zap._request(self.zap.base + 'ascan/action/setOptionMaxScanDurationInMins/', {'Integer' : integer, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/setOptionMaxScanDurationInMins/', {'Integer' : integer, 'apikey' : apikey}).values()))
 
     def set_option_max_scans_in_ui(self, integer, apikey=''):
-        return next(self.zap._request(self.zap.base + 'ascan/action/setOptionMaxScansInUI/', {'Integer' : integer, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/setOptionMaxScansInUI/', {'Integer' : integer, 'apikey' : apikey}).values()))
 
     def set_option_prompt_in_attack_mode(self, boolean, apikey=''):
-        return next(self.zap._request(self.zap.base + 'ascan/action/setOptionPromptInAttackMode/', {'Boolean' : boolean, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/setOptionPromptInAttackMode/', {'Boolean' : boolean, 'apikey' : apikey}).values()))
 
     def set_option_prompt_to_clear_finished_scans(self, boolean, apikey=''):
-        return next(self.zap._request(self.zap.base + 'ascan/action/setOptionPromptToClearFinishedScans/', {'Boolean' : boolean, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/setOptionPromptToClearFinishedScans/', {'Boolean' : boolean, 'apikey' : apikey}).values()))
 
     def set_option_rescan_in_attack_mode(self, boolean, apikey=''):
-        return next(self.zap._request(self.zap.base + 'ascan/action/setOptionRescanInAttackMode/', {'Boolean' : boolean, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/setOptionRescanInAttackMode/', {'Boolean' : boolean, 'apikey' : apikey}).values()))
 
     def set_option_scan_headers_all_requests(self, boolean, apikey=''):
         """
         Sets whether or not the HTTP Headers of all requests should be scanned. Not just requests that send parameters, through the query or request body.
         """
-        return next(self.zap._request(self.zap.base + 'ascan/action/setOptionScanHeadersAllRequests/', {'Boolean' : boolean, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/setOptionScanHeadersAllRequests/', {'Boolean' : boolean, 'apikey' : apikey}).values()))
 
     def set_option_show_advanced_dialog(self, boolean, apikey=''):
-        return next(self.zap._request(self.zap.base + 'ascan/action/setOptionShowAdvancedDialog/', {'Boolean' : boolean, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/setOptionShowAdvancedDialog/', {'Boolean' : boolean, 'apikey' : apikey}).values()))
 
     def set_option_target_params_enabled_rpc(self, integer, apikey=''):
-        return next(self.zap._request(self.zap.base + 'ascan/action/setOptionTargetParamsEnabledRPC/', {'Integer' : integer, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/setOptionTargetParamsEnabledRPC/', {'Integer' : integer, 'apikey' : apikey}).values()))
 
     def set_option_target_params_injectable(self, integer, apikey=''):
-        return next(self.zap._request(self.zap.base + 'ascan/action/setOptionTargetParamsInjectable/', {'Integer' : integer, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/setOptionTargetParamsInjectable/', {'Integer' : integer, 'apikey' : apikey}).values()))
 
     def set_option_thread_per_host(self, integer, apikey=''):
-        return next(self.zap._request(self.zap.base + 'ascan/action/setOptionThreadPerHost/', {'Integer' : integer, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'ascan/action/setOptionThreadPerHost/', {'Integer' : integer, 'apikey' : apikey}).values()))
 
 

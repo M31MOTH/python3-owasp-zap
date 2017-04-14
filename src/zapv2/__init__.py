@@ -24,29 +24,29 @@ __docformat__ = 'restructuredtext'
 import requests
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
-from acsrf import acsrf
-from ascan import ascan
-from ajaxSpider import ajaxSpider
-from authentication import authentication
-from authorization import authorization
-from autoupdate import autoupdate
-from brk import brk
-from context import context
-from core import core
-from forcedUser import forcedUser
-from httpSessions import httpSessions
-from importLogFiles import importLogFiles
-from params import params
-from pnh import pnh
-from pscan import pscan
-from reveal import reveal
-from script import script
-from search import search
-from selenium import selenium
-from sessionManagement import sessionManagement
-from spider import spider
-from stats import stats
-from users import users
+from .acsrf import acsrf
+from .ascan import ascan
+from .ajaxSpider import ajaxSpider
+from .authentication import authentication
+from .authorization import authorization
+from .autoupdate import autoupdate
+from .brk import brk
+from .context import context
+from .core import core
+from .forcedUser import forcedUser
+from .httpSessions import httpSessions
+from .importLogFiles import importLogFiles
+from .params import params
+from .pnh import pnh
+from .pscan import pscan
+from .reveal import reveal
+from .script import script
+from .search import search
+from .selenium import selenium
+from .sessionManagement import sessionManagement
+from .spider import spider
+from .stats import stats
+from .users import users
 
 
 class ZAPv2(object):

@@ -26,30 +26,30 @@ class authentication(object):
 
     @property
     def get_supported_authentication_methods(self):
-        return next(self.zap._request(self.zap.base + 'authentication/view/getSupportedAuthenticationMethods/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'authentication/view/getSupportedAuthenticationMethods/').values()))
 
     def get_authentication_method_config_params(self, authmethodname):
-        return next(self.zap._request(self.zap.base + 'authentication/view/getAuthenticationMethodConfigParams/', {'authMethodName' : authmethodname}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'authentication/view/getAuthenticationMethodConfigParams/', {'authMethodName' : authmethodname}).values()))
 
     def get_authentication_method(self, contextid):
-        return next(self.zap._request(self.zap.base + 'authentication/view/getAuthenticationMethod/', {'contextId' : contextid}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'authentication/view/getAuthenticationMethod/', {'contextId' : contextid}).values()))
 
     def get_logged_in_indicator(self, contextid):
-        return next(self.zap._request(self.zap.base + 'authentication/view/getLoggedInIndicator/', {'contextId' : contextid}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'authentication/view/getLoggedInIndicator/', {'contextId' : contextid}).values()))
 
     def get_logged_out_indicator(self, contextid):
-        return next(self.zap._request(self.zap.base + 'authentication/view/getLoggedOutIndicator/', {'contextId' : contextid}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'authentication/view/getLoggedOutIndicator/', {'contextId' : contextid}).values()))
 
     def set_authentication_method(self, contextid, authmethodname, authmethodconfigparams=None, apikey=''):
         params = {'contextId' : contextid, 'authMethodName' : authmethodname, 'apikey' : apikey}
         if authmethodconfigparams is not None:
             params['authMethodConfigParams'] = authmethodconfigparams
-        return next(self.zap._request(self.zap.base + 'authentication/action/setAuthenticationMethod/', params).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'authentication/action/setAuthenticationMethod/', params).values()))
 
     def set_logged_in_indicator(self, contextid, loggedinindicatorregex, apikey=''):
-        return next(self.zap._request(self.zap.base + 'authentication/action/setLoggedInIndicator/', {'contextId' : contextid, 'loggedInIndicatorRegex' : loggedinindicatorregex, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'authentication/action/setLoggedInIndicator/', {'contextId' : contextid, 'loggedInIndicatorRegex' : loggedinindicatorregex, 'apikey' : apikey}).values()))
 
     def set_logged_out_indicator(self, contextid, loggedoutindicatorregex, apikey=''):
-        return next(self.zap._request(self.zap.base + 'authentication/action/setLoggedOutIndicator/', {'contextId' : contextid, 'loggedOutIndicatorRegex' : loggedoutindicatorregex, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'authentication/action/setLoggedOutIndicator/', {'contextId' : contextid, 'loggedOutIndicatorRegex' : loggedoutindicatorregex, 'apikey' : apikey}).values()))
 
 

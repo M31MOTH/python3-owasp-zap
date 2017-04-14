@@ -31,6 +31,6 @@ class params(object):
         params = {}
         if site is not None:
             params['site'] = site
-        return next(self.zap._request(self.zap.base + 'params/view/params/', params).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'params/view/params/', params).values()))
 
 

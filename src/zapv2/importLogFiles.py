@@ -28,19 +28,19 @@ class importLogFiles(object):
         """
         This component is optional and therefore the API will only work if it is installed
         """
-        return next(self.zap._request(self.zap.base + 'importLogFiles/action/ImportZAPLogFromFile/', {'FilePath' : filepath, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'importLogFiles/action/ImportZAPLogFromFile/', {'FilePath' : filepath, 'apikey' : apikey}).values()))
 
     def import_mod_security_log_from_file(self, filepath, apikey=''):
         """
         This component is optional and therefore the API will only work if it is installed
         """
-        return next(self.zap._request(self.zap.base + 'importLogFiles/action/ImportModSecurityLogFromFile/', {'FilePath' : filepath, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'importLogFiles/action/ImportModSecurityLogFromFile/', {'FilePath' : filepath, 'apikey' : apikey}).values()))
 
     def import_zap_http_request_response_pair(self, httprequest, httpresponse, apikey=''):
         """
         This component is optional and therefore the API will only work if it is installed
         """
-        return next(self.zap._request(self.zap.base + 'importLogFiles/action/ImportZAPHttpRequestResponsePair/', {'HTTPRequest' : httprequest, 'HTTPResponse' : httpresponse, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'importLogFiles/action/ImportZAPHttpRequestResponsePair/', {'HTTPRequest' : httprequest, 'HTTPResponse' : httpresponse, 'apikey' : apikey}).values()))
 
     def post_mod_security_audit_event(self, auditeventstring=None, apikey=''):
         """
@@ -49,7 +49,7 @@ class importLogFiles(object):
         params = {'apikey' : apikey}
         if auditeventstring is not None:
             params['AuditEventString'] = auditeventstring
-        return next(self.zap._request(self.zap.base + 'importLogFiles/action/PostModSecurityAuditEvent/', params).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'importLogFiles/action/PostModSecurityAuditEvent/', params).values()))
 
     def other_post_mod_security_audit_event(self, auditeventstring, apikey=''):
         """

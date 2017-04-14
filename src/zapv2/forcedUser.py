@@ -29,24 +29,24 @@ class forcedUser(object):
         """
         Returns 'true' if 'forced user' mode is enabled, 'false' otherwise
         """
-        return next(self.zap._request(self.zap.base + 'forcedUser/view/isForcedUserModeEnabled/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'forcedUser/view/isForcedUserModeEnabled/').values()))
 
     def get_forced_user(self, contextid):
         """
         Gets the user (ID) set as 'forced user' for the given context (ID)
         """
-        return next(self.zap._request(self.zap.base + 'forcedUser/view/getForcedUser/', {'contextId' : contextid}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'forcedUser/view/getForcedUser/', {'contextId' : contextid}).values()))
 
     def set_forced_user(self, contextid, userid, apikey=''):
         """
         Sets the user (ID) that should be used in 'forced user' mode for the given context (ID)
         """
-        return next(self.zap._request(self.zap.base + 'forcedUser/action/setForcedUser/', {'contextId' : contextid, 'userId' : userid, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'forcedUser/action/setForcedUser/', {'contextId' : contextid, 'userId' : userid, 'apikey' : apikey}).values()))
 
     def set_forced_user_mode_enabled(self, boolean, apikey=''):
         """
         Sets if 'forced user' mode should be enabled or not
         """
-        return next(self.zap._request(self.zap.base + 'forcedUser/action/setForcedUserModeEnabled/', {'boolean' : boolean, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'forcedUser/action/setForcedUserModeEnabled/', {'boolean' : boolean, 'apikey' : apikey}).values()))
 
 

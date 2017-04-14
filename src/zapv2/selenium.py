@@ -29,64 +29,64 @@ class selenium(object):
         """
         This component is optional and therefore the API will only work if it is installed
         """
-        return next(self.zap._request(self.zap.base + 'selenium/view/optionChromeDriverPath/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'selenium/view/optionChromeDriverPath/').values()))
 
     @property
     def option_firefox_binary_path(self):
         """
         This component is optional and therefore the API will only work if it is installed
         """
-        return next(self.zap._request(self.zap.base + 'selenium/view/optionFirefoxBinaryPath/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'selenium/view/optionFirefoxBinaryPath/').values()))
 
     @property
     def option_firefox_driver_path(self):
         """
         This component is optional and therefore the API will only work if it is installed
         """
-        return next(self.zap._request(self.zap.base + 'selenium/view/optionFirefoxDriverPath/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'selenium/view/optionFirefoxDriverPath/').values()))
 
     @property
     def option_ie_driver_path(self):
         """
         This component is optional and therefore the API will only work if it is installed
         """
-        return next(self.zap._request(self.zap.base + 'selenium/view/optionIeDriverPath/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'selenium/view/optionIeDriverPath/').values()))
 
     @property
     def option_phantom_js_binary_path(self):
         """
         This component is optional and therefore the API will only work if it is installed
         """
-        return next(self.zap._request(self.zap.base + 'selenium/view/optionPhantomJsBinaryPath/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'selenium/view/optionPhantomJsBinaryPath/').values()))
 
     def set_option_chrome_driver_path(self, string, apikey=''):
         """
         This component is optional and therefore the API will only work if it is installed
         """
-        return next(self.zap._request(self.zap.base + 'selenium/action/setOptionChromeDriverPath/', {'String' : string, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'selenium/action/setOptionChromeDriverPath/', {'String' : string, 'apikey' : apikey}).values()))
 
     def set_option_firefox_binary_path(self, string, apikey=''):
         """
         This component is optional and therefore the API will only work if it is installed
         """
-        return next(self.zap._request(self.zap.base + 'selenium/action/setOptionFirefoxBinaryPath/', {'String' : string, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'selenium/action/setOptionFirefoxBinaryPath/', {'String' : string, 'apikey' : apikey}).values()))
 
     def set_option_firefox_driver_path(self, string, apikey=''):
         """
         This component is optional and therefore the API will only work if it is installed
         """
-        return next(self.zap._request(self.zap.base + 'selenium/action/setOptionFirefoxDriverPath/', {'String' : string, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'selenium/action/setOptionFirefoxDriverPath/', {'String' : string, 'apikey' : apikey}).values()))
 
     def set_option_ie_driver_path(self, string, apikey=''):
         """
         This component is optional and therefore the API will only work if it is installed
         """
-        return next(self.zap._request(self.zap.base + 'selenium/action/setOptionIeDriverPath/', {'String' : string, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'selenium/action/setOptionIeDriverPath/', {'String' : string, 'apikey' : apikey}).values()))
 
     def set_option_phantom_js_binary_path(self, string, apikey=''):
         """
         This component is optional and therefore the API will only work if it is installed
         """
-        return next(self.zap._request(self.zap.base + 'selenium/action/setOptionPhantomJsBinaryPath/', {'String' : string, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'selenium/action/setOptionPhantomJsBinaryPath/', {'String' : string, 'apikey' : apikey}).values()))
 
 

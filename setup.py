@@ -9,7 +9,7 @@ __docformat__ = 'restructuredtext'
 try:
     from setuptools import setup, find_packages
 except ImportError:
-    print "You must have setuptools installed to use setup.py. Exiting..."
+    print("You must have setuptools installed to use setup.py. Exiting...")
     raise SystemExit(1)
 
 
@@ -23,14 +23,14 @@ test_requirements = (
     'requests_mock'
 )
 setup(
-    name="python-owasp-zap-v2.4",
+    name="python3-owasp-zap",
     version="0.0.9",
-    description="OWASP ZAP 2.6 API client",
-    long_description="OWASP Zed Attack Proxy 2.6 API python client (the 2.4 package name has been kept to make it easier to upgrade)",
-    author="ZAP development team",
+    description="OWASP ZAP 2.6 API client (python3)",
+    long_description="OWASP Zed Attack Proxy 2.6 API python3 client",
+    author="ZAP development team (ported to Python3 by Fabian Martinez Portantier)",
     author_email='',
     url="https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project",
-    download_url="https://github.com/zaproxy/zap-api-python/releases/tag/0.0.9",
+    download_url="https://github.com/portantier/zap-api-python3",
     platforms=['any'],
 
     license="ASL2.0",
@@ -47,7 +47,7 @@ setup(
         'Topic :: Software Development :: Libraries :: Python Modules',
         'Intended Audience :: Developers',
         'Intended Audience :: Information Technology',
-        'Programming Language :: Python'],
+        'Programming Language :: Python :: 3'],
     install_requires=install_dependencies,
     tests_require=test_requirements,
     extras_require={'tests': test_requirements}

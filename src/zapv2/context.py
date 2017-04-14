@@ -29,109 +29,109 @@ class context(object):
         """
         List context names of current session
         """
-        return next(self.zap._request(self.zap.base + 'context/view/contextList/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'context/view/contextList/').values()))
 
     def exclude_regexs(self, contextname):
         """
         List excluded regexs for context
         """
-        return next(self.zap._request(self.zap.base + 'context/view/excludeRegexs/', {'contextName' : contextname}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'context/view/excludeRegexs/', {'contextName' : contextname}).values()))
 
     def include_regexs(self, contextname):
         """
         List included regexs for context
         """
-        return next(self.zap._request(self.zap.base + 'context/view/includeRegexs/', {'contextName' : contextname}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'context/view/includeRegexs/', {'contextName' : contextname}).values()))
 
     def context(self, contextname):
         """
         List the information about the named context
         """
-        return next(self.zap._request(self.zap.base + 'context/view/context/', {'contextName' : contextname}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'context/view/context/', {'contextName' : contextname}).values()))
 
     @property
     def technology_list(self):
         """
         Lists the names of all built in technologies
         """
-        return next(self.zap._request(self.zap.base + 'context/view/technologyList/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'context/view/technologyList/').values()))
 
     def included_technology_list(self, contextname):
         """
         Lists the names of all technologies included in a context
         """
-        return next(self.zap._request(self.zap.base + 'context/view/includedTechnologyList/', {'contextName' : contextname}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'context/view/includedTechnologyList/', {'contextName' : contextname}).values()))
 
     def excluded_technology_list(self, contextname):
         """
         Lists the names of all technologies excluded from a context
         """
-        return next(self.zap._request(self.zap.base + 'context/view/excludedTechnologyList/', {'contextName' : contextname}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'context/view/excludedTechnologyList/', {'contextName' : contextname}).values()))
 
     def exclude_from_context(self, contextname, regex, apikey=''):
         """
         Add exclude regex to context
         """
-        return next(self.zap._request(self.zap.base + 'context/action/excludeFromContext/', {'contextName' : contextname, 'regex' : regex, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'context/action/excludeFromContext/', {'contextName' : contextname, 'regex' : regex, 'apikey' : apikey}).values()))
 
     def include_in_context(self, contextname, regex, apikey=''):
         """
         Add include regex to context
         """
-        return next(self.zap._request(self.zap.base + 'context/action/includeInContext/', {'contextName' : contextname, 'regex' : regex, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'context/action/includeInContext/', {'contextName' : contextname, 'regex' : regex, 'apikey' : apikey}).values()))
 
     def new_context(self, contextname, apikey=''):
         """
         Creates a new context with the given name in the current session
         """
-        return next(self.zap._request(self.zap.base + 'context/action/newContext/', {'contextName' : contextname, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'context/action/newContext/', {'contextName' : contextname, 'apikey' : apikey}).values()))
 
     def remove_context(self, contextname, apikey=''):
         """
         Removes a context in the current session
         """
-        return next(self.zap._request(self.zap.base + 'context/action/removeContext/', {'contextName' : contextname, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'context/action/removeContext/', {'contextName' : contextname, 'apikey' : apikey}).values()))
 
     def export_context(self, contextname, contextfile, apikey=''):
         """
         Exports the context with the given name to a file. If a relative file path is specified it will be resolved against the "contexts" directory in ZAP "home" dir.
         """
-        return next(self.zap._request(self.zap.base + 'context/action/exportContext/', {'contextName' : contextname, 'contextFile' : contextfile, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'context/action/exportContext/', {'contextName' : contextname, 'contextFile' : contextfile, 'apikey' : apikey}).values()))
 
     def import_context(self, contextfile, apikey=''):
         """
         Imports a context from a file. If a relative file path is specified it will be resolved against the "contexts" directory in ZAP "home" dir.
         """
-        return next(self.zap._request(self.zap.base + 'context/action/importContext/', {'contextFile' : contextfile, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'context/action/importContext/', {'contextFile' : contextfile, 'apikey' : apikey}).values()))
 
     def include_context_technologies(self, contextname, technologynames, apikey=''):
         """
         Includes technologies with the given names, separated by a comma, to a context
         """
-        return next(self.zap._request(self.zap.base + 'context/action/includeContextTechnologies/', {'contextName' : contextname, 'technologyNames' : technologynames, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'context/action/includeContextTechnologies/', {'contextName' : contextname, 'technologyNames' : technologynames, 'apikey' : apikey}).values()))
 
     def include_all_context_technologies(self, contextname, apikey=''):
         """
         Includes all built in technologies in to a context
         """
-        return next(self.zap._request(self.zap.base + 'context/action/includeAllContextTechnologies/', {'contextName' : contextname, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'context/action/includeAllContextTechnologies/', {'contextName' : contextname, 'apikey' : apikey}).values()))
 
     def exclude_context_technologies(self, contextname, technologynames, apikey=''):
         """
         Excludes technologies with the given names, separated by a comma, from a context
         """
-        return next(self.zap._request(self.zap.base + 'context/action/excludeContextTechnologies/', {'contextName' : contextname, 'technologyNames' : technologynames, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'context/action/excludeContextTechnologies/', {'contextName' : contextname, 'technologyNames' : technologynames, 'apikey' : apikey}).values()))
 
     def exclude_all_context_technologies(self, contextname, apikey=''):
         """
         Excludes all built in technologies from a context
         """
-        return next(self.zap._request(self.zap.base + 'context/action/excludeAllContextTechnologies/', {'contextName' : contextname, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'context/action/excludeAllContextTechnologies/', {'contextName' : contextname, 'apikey' : apikey}).values()))
 
     def set_context_in_scope(self, contextname, booleaninscope, apikey=''):
         """
         Sets a context to in scope (contexts are in scope by default)
         """
-        return next(self.zap._request(self.zap.base + 'context/action/setContextInScope/', {'contextName' : contextname, 'booleanInScope' : booleaninscope, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'context/action/setContextInScope/', {'contextName' : contextname, 'booleanInScope' : booleaninscope, 'apikey' : apikey}).values()))
 
 

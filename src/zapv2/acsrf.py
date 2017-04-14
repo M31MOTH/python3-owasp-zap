@@ -29,19 +29,19 @@ class acsrf(object):
         """
         Lists the names of all anti-CSRF tokens
         """
-        return next(self.zap._request(self.zap.base + 'acsrf/view/optionTokensNames/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'acsrf/view/optionTokensNames/').values()))
 
     def add_option_token(self, string, apikey=''):
         """
         Adds an anti-CSRF token with the given name, enabled by default
         """
-        return next(self.zap._request(self.zap.base + 'acsrf/action/addOptionToken/', {'String' : string, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'acsrf/action/addOptionToken/', {'String' : string, 'apikey' : apikey}).values()))
 
     def remove_option_token(self, string, apikey=''):
         """
         Removes the anti-CSRF token with the given name
         """
-        return next(self.zap._request(self.zap.base + 'acsrf/action/removeOptionToken/', {'String' : string, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'acsrf/action/removeOptionToken/', {'String' : string, 'apikey' : apikey}).values()))
 
     def gen_form(self, hrefid, apikey=''):
         """

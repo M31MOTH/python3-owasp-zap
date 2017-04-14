@@ -29,28 +29,28 @@ class brk(object):
         """
         Returns True if ZAP will break on both requests and responses
         """
-        return next(self.zap._request(self.zap.base + 'break/view/isBreakAll/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'break/view/isBreakAll/').values()))
 
     @property
     def is_break_request(self):
         """
         Returns True if ZAP will break on requests
         """
-        return next(self.zap._request(self.zap.base + 'break/view/isBreakRequest/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'break/view/isBreakRequest/').values()))
 
     @property
     def is_break_response(self):
         """
         Returns True if ZAP will break on responses
         """
-        return next(self.zap._request(self.zap.base + 'break/view/isBreakResponse/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'break/view/isBreakResponse/').values()))
 
     @property
     def http_message(self):
         """
         Returns the HTTP message currently intercepted (if any)
         """
-        return next(self.zap._request(self.zap.base + 'break/view/httpMessage/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'break/view/httpMessage/').values()))
 
     def brk(self, type, state, scope=None, apikey=''):
         """
@@ -59,7 +59,7 @@ class brk(object):
         params = {'type' : type, 'state' : state, 'apikey' : apikey}
         if scope is not None:
             params['scope'] = scope
-        return next(self.zap._request(self.zap.base + 'break/action/break/', params).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'break/action/break/', params).values()))
 
     def set_http_message(self, httpheader, httpbody=None, apikey=''):
         """
@@ -68,36 +68,36 @@ class brk(object):
         params = {'httpHeader' : httpheader, 'apikey' : apikey}
         if httpbody is not None:
             params['httpBody'] = httpbody
-        return next(self.zap._request(self.zap.base + 'break/action/setHttpMessage/', params).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'break/action/setHttpMessage/', params).values()))
 
     def cont(self, apikey=''):
         """
         Submits the currently intercepted message and unsets the global request/response break points
         """
-        return next(self.zap._request(self.zap.base + 'break/action/continue/', {'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'break/action/continue/', {'apikey' : apikey}).values()))
 
     def step(self, apikey=''):
         """
         Submits the currently intercepted message, the next request or response will automatically be intercepted
         """
-        return next(self.zap._request(self.zap.base + 'break/action/step/', {'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'break/action/step/', {'apikey' : apikey}).values()))
 
     def drop(self, apikey=''):
         """
         Drops the currently intercepted message
         """
-        return next(self.zap._request(self.zap.base + 'break/action/drop/', {'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'break/action/drop/', {'apikey' : apikey}).values()))
 
     def add_http_breakpoint(self, string, location, match, inverse, ignorecase, apikey=''):
         """
         Adds a custom HTTP breakpont. The string is the string to match. Location may be one of: url, request_header, request_body, response_header or response_body. Match may be: contains or regex. Inverse (match) may be true or false. Lastly, ignorecase (when matching the string) may be true or false.  
         """
-        return next(self.zap._request(self.zap.base + 'break/action/addHttpBreakpoint/', {'string' : string, 'location' : location, 'match' : match, 'inverse' : inverse, 'ignorecase' : ignorecase, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'break/action/addHttpBreakpoint/', {'string' : string, 'location' : location, 'match' : match, 'inverse' : inverse, 'ignorecase' : ignorecase, 'apikey' : apikey}).values()))
 
     def remove_http_breakpoint(self, string, location, match, inverse, ignorecase, apikey=''):
         """
         Removes the specified break point
         """
-        return next(self.zap._request(self.zap.base + 'break/action/removeHttpBreakpoint/', {'string' : string, 'location' : location, 'match' : match, 'inverse' : inverse, 'ignorecase' : ignorecase, 'apikey' : apikey}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'break/action/removeHttpBreakpoint/', {'string' : string, 'location' : location, 'match' : match, 'inverse' : inverse, 'ignorecase' : ignorecase, 'apikey' : apikey}).values()))
 
 

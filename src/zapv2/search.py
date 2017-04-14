@@ -32,7 +32,7 @@ class search(object):
             params['start'] = start
         if count is not None:
             params['count'] = count
-        return next(self.zap._request(self.zap.base + 'search/view/urlsByUrlRegex/', params).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'search/view/urlsByUrlRegex/', params).values()))
 
     def urls_by_request_regex(self, regex, baseurl=None, start=None, count=None):
         params = {'regex' : regex}
@@ -42,7 +42,7 @@ class search(object):
             params['start'] = start
         if count is not None:
             params['count'] = count
-        return next(self.zap._request(self.zap.base + 'search/view/urlsByRequestRegex/', params).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'search/view/urlsByRequestRegex/', params).values()))
 
     def urls_by_response_regex(self, regex, baseurl=None, start=None, count=None):
         params = {'regex' : regex}
@@ -52,7 +52,7 @@ class search(object):
             params['start'] = start
         if count is not None:
             params['count'] = count
-        return next(self.zap._request(self.zap.base + 'search/view/urlsByResponseRegex/', params).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'search/view/urlsByResponseRegex/', params).values()))
 
     def urls_by_header_regex(self, regex, baseurl=None, start=None, count=None):
         params = {'regex' : regex}
@@ -62,7 +62,7 @@ class search(object):
             params['start'] = start
         if count is not None:
             params['count'] = count
-        return next(self.zap._request(self.zap.base + 'search/view/urlsByHeaderRegex/', params).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'search/view/urlsByHeaderRegex/', params).values()))
 
     def messages_by_url_regex(self, regex, baseurl=None, start=None, count=None):
         params = {'regex' : regex}
@@ -72,7 +72,7 @@ class search(object):
             params['start'] = start
         if count is not None:
             params['count'] = count
-        return next(self.zap._request(self.zap.base + 'search/view/messagesByUrlRegex/', params).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'search/view/messagesByUrlRegex/', params).values()))
 
     def messages_by_request_regex(self, regex, baseurl=None, start=None, count=None):
         params = {'regex' : regex}
@@ -82,7 +82,7 @@ class search(object):
             params['start'] = start
         if count is not None:
             params['count'] = count
-        return next(self.zap._request(self.zap.base + 'search/view/messagesByRequestRegex/', params).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'search/view/messagesByRequestRegex/', params).values()))
 
     def messages_by_response_regex(self, regex, baseurl=None, start=None, count=None):
         params = {'regex' : regex}
@@ -92,7 +92,7 @@ class search(object):
             params['start'] = start
         if count is not None:
             params['count'] = count
-        return next(self.zap._request(self.zap.base + 'search/view/messagesByResponseRegex/', params).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'search/view/messagesByResponseRegex/', params).values()))
 
     def messages_by_header_regex(self, regex, baseurl=None, start=None, count=None):
         params = {'regex' : regex}
@@ -102,7 +102,7 @@ class search(object):
             params['start'] = start
         if count is not None:
             params['count'] = count
-        return next(self.zap._request(self.zap.base + 'search/view/messagesByHeaderRegex/', params).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'search/view/messagesByHeaderRegex/', params).values()))
 
     def har_by_url_regex(self, regex, baseurl=None, start=None, count=None, apikey=''):
         params = {'regex' : regex, 'apikey' : apikey}

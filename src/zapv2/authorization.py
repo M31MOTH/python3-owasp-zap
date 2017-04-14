@@ -28,7 +28,7 @@ class authorization(object):
         """
         Obtains all the configuration of the authorization detection method that is currently set for a context.
         """
-        return next(self.zap._request(self.zap.base + 'authorization/view/getAuthorizationDetectionMethod/', {'contextId' : contextid}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'authorization/view/getAuthorizationDetectionMethod/', {'contextId' : contextid}).values()))
 
     def set_basic_authorization_detection_method(self, contextid, headerregex=None, bodyregex=None, statuscode=None, logicaloperator=None, apikey=''):
         """
@@ -43,6 +43,6 @@ class authorization(object):
             params['statusCode'] = statuscode
         if logicaloperator is not None:
             params['logicalOperator'] = logicaloperator
-        return next(self.zap._request(self.zap.base + 'authorization/action/setBasicAuthorizationDetectionMethod/', params).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'authorization/action/setBasicAuthorizationDetectionMethod/', params).values()))
 
 

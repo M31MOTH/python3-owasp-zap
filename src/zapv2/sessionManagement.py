@@ -26,18 +26,18 @@ class sessionManagement(object):
 
     @property
     def get_supported_session_management_methods(self):
-        return next(self.zap._request(self.zap.base + 'sessionManagement/view/getSupportedSessionManagementMethods/').itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'sessionManagement/view/getSupportedSessionManagementMethods/').values()))
 
     def get_session_management_method_config_params(self, methodname):
-        return next(self.zap._request(self.zap.base + 'sessionManagement/view/getSessionManagementMethodConfigParams/', {'methodName' : methodname}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'sessionManagement/view/getSessionManagementMethodConfigParams/', {'methodName' : methodname}).values()))
 
     def get_session_management_method(self, contextid):
-        return next(self.zap._request(self.zap.base + 'sessionManagement/view/getSessionManagementMethod/', {'contextId' : contextid}).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'sessionManagement/view/getSessionManagementMethod/', {'contextId' : contextid}).values()))
 
     def set_session_management_method(self, contextid, methodname, methodconfigparams=None, apikey=''):
         params = {'contextId' : contextid, 'methodName' : methodname, 'apikey' : apikey}
         if methodconfigparams is not None:
             params['methodConfigParams'] = methodconfigparams
-        return next(self.zap._request(self.zap.base + 'sessionManagement/action/setSessionManagementMethod/', params).itervalues())
+        return next(iter(self.zap._request(self.zap.base + 'sessionManagement/action/setSessionManagementMethod/', params).values()))
 
 

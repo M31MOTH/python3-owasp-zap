@@ -28,9 +28,9 @@ setup(
     description="OWASP ZAP 2.6 API client (python3)",
     long_description="OWASP Zed Attack Proxy 2.6 API python3 client",
     author="ZAP development team (ported to Python3 by Fabian Martinez Portantier)",
-    author_email='',
+    author_email='fportantier@securetia.com',
     url="https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project",
-    download_url="https://github.com/portantier/zap-api-python3",
+    download_url="https://github.com/portantier/python3-owasp-zap",
     platforms=['any'],
 
     license="ASL2.0",
